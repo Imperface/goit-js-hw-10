@@ -1,7 +1,8 @@
 img {
   max-width: 100%;
+  display: block;
 }
-h1,
+h2,
 p {
   margin: 0;
 }
@@ -10,12 +11,48 @@ p {
   margin: 0 auto;
   padding: 10px;
 }
-.loader,
-.error {
-  display: none;
-}
 .breed-select {
   text-align: center;
   display: block;
+  margin: 0 auto 15px;
+}
+.title {
+  display: block;
   margin: 0 auto 10px;
+  text-align: center;
+  max-width: 500px;
+}
+.loader {
+  font-size: 20px;
+  text-align: center;
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1980px;
+  }
+  .card-container {
+    display: flex;
+    column-gap: 30px;
+  }
+  .card-img {
+    width: 500px;
+    object-fit: contain;
+  }
+  .card-info {
+    align-self: center;
+  }
+  .card-title {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+  .card-description {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  .card-special {
+    font-size: 20px;
+  }
+  .card-special-s {
+    font-weight: bold;
+  }
 }
