@@ -1,5 +1,5 @@
 import { fetchBreeds } from './cat-api';
-import getRefs from './get-refs';
+import { getRefs } from './get-refs';
 
 export const renderSelectOpt = () => {
   const refs = getRefs();
