@@ -1,0 +1,6 @@
+export default getRefs = () => ({
+  select: document.querySelector('.breed-select'),
+  pLoader: document.querySelector('.loader'),
+  pError: document.querySelector('.error'),
+  info: document.querySelector('.cat-info'),
+});
