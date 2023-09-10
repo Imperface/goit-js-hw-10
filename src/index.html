@@ -3,6 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
@@ -12,11 +23,11 @@
   </head>
   <body>
     <div class="container">
-      <h1 class="title">
-        Search for characteristics of a cat by its breed. Choose a breed
-      </h1>
-      <select class="breed-select"></select>
-      <p class="loader">Loading data, please wait...</p>
+      <h1 class="title">Search for characteristics of a cat by its breed</h1>
+      <select class="breed-select" id="selectElement"></select>
+      <p class="loaderP">
+        <span class="loader"></span> Loading data, please wait...
+      </p>
       <p class="error">Oops! Something went wrong! Try reloading the page!</p>
       <div class="cat-info"></div>
     </div>
