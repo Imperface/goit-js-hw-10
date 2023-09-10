@@ -1,25 +1,27 @@
 import { fetchBreeds } from './cat-api';
 import { getRefs } from './get-refs';
 import { Report } from 'notiflix/build/notiflix-report-aio';
-import Choices from 'choices.js';
+import SlimSelect from 'slim-select';
+import 'slim-select/dist/slimselect.css';
 
-const addChoicesSelect = ref => {
-  const choices = new Choices(ref, {
-    searchEnabled: false,
+const addSlimSelect = (ref, data) => {
+  const slimSelect = new SlimSelect({
+    select: ref,
+    data: data,
+    showSearch: false,
+    placeholder: 'Choose the breed',
   });
 };
 export const renderSelectOpt = () => {
   fetchBreeds()
     .then(r => {
       const refs = getRefs();
-      const markupSelectOpt = r
-        .map(item => {
-          return `<option class = "option" value="${item.id}">${item.name}</option>`;
-        })
-        .join('');
-      refs.select.insertAdjacentHTML('beforeend', markupSelectOpt);
+      const dataSelect = [];
+      r.map(elem => {
+        dataSelect.push({ text: elem.name, value: elem.id });
+      });
+      addSlimSelect('#selectElement', dataSelect);
 
-      addChoicesSelect(refs.select);
       refs.pLoader.style.display = 'none';
       refs.select.style.display = 'block';
     })

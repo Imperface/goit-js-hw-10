@@ -14,4 +14,4 @@ const onSelectInput = e => {
   const selectedOptionValue = e.target.value;
   renderCatCard(selectedOptionValue);
 };
-refs.select.addEventListener('choice', onSelectInput);
+refs.select.addEventListener('input', onSelectInput);
