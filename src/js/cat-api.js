@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { API_KEY, BASE_URL } from './cat-api-key-url';
+import { Report } from 'notiflix/build/notiflix-report-aio';
 const fetchCats = endpoint => {
   return axios
     .get(`${endpoint}`, {
@@ -9,6 +10,15 @@ const fetchCats = endpoint => {
     })
     .then(r => {
       return r.data;
+    })
+    .catch(error => {
+      Report.failure(
+        'Oops! Something went wrong!',
+        'Try reloading the page',
+        'Okay'
+      );
+      refs.pLoader.style.display = 'none';
+      refs.pError.style.display = 'block';
     });
 };
 export const fetchBreeds = () => {
