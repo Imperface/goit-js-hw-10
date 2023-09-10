@@ -8,9 +8,6 @@ const fetchCats = endpoint => {
       },
     })
     .then(r => {
-      if (r.statusText !== 'OK') {
-        throw new Error(r.status);
-      }
       return r.data;
     });
 };

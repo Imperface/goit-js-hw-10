@@ -32,7 +32,10 @@ h2 {
   align-items: center;
   justify-content: center;
 }
-
+.card-img {
+  object-fit: contain;
+  margin-bottom: 20px;
+}
 .card-title {
   font-size: 30px;
   margin-bottom: 30px;
@@ -58,6 +61,7 @@ h2 {
   .card-img {
     width: 500px;
     object-fit: contain;
+    margin-bottom: 20px;
   }
   .card-info {
     align-self: center;
